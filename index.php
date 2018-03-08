@@ -75,6 +75,39 @@
         </div>
     
         <!-- Fin formulaire  Ajouter une commentaire -->
+        
+        
+    	<!--  Affichez la liste des messages-->
+        <div class="panel panel-info spacer">
+            <div class="panel-heading">
+            Affichez la liste des messages
+            </div>
+            <div class="panel-body">
+                <?php
+                
+                $liste_news = unserialize(file_get_contents('news.txt'));
+                
+                if(!empty($liste_news)) {
+                
+                foreach($liste_news as $id => $news) {
+                $news = array_map('htmlspecialchars', $news);
+                ?>
+                
+                <h4>Ajout&eacute;e par <?php echo $news['nom'] ?></h4>
+                
+                <p><?php echo $news['text'] ?></p>
+                <a href="">Supprimer</a>
+                
+                <?php
+                }
+                }
+                else {           
+                echo '<p class="bg-success">Il n\'y a aucune Commentaire pour le moment </p>';
+                }
+                ?>
+            </div>  
+        </div> 
+        <!--  Affichez la liste des messages--> 
     </div> 
 
 </div>
