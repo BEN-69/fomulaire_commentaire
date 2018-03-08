@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Livre d'or</title>
+         <link rel="stylesheet" media="screen" type="text/css" title="livre_or" href="bootstrap.min.css"/>
     </head>
     <body>
         
@@ -16,7 +17,6 @@
 <div class="container">
     
     <div class="col-md-10 col-xs-10 spacer">     
-           
         <!-- formulaire  Ajouter une commentaire -->
     
         <div class="panel panel-default spacer">
@@ -51,12 +51,12 @@
             </div>
         </div>
     
-        <!-- Fin formulaire  Ajouter une commentaire -->        
-        
+        <!-- Fin formulaire  Ajouter une commentaire -->
     </div> 
 
 </div>
 <!--  Fin container-->
 </body>
 </html>
+
 
