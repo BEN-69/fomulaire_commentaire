@@ -96,7 +96,9 @@
                 <h4>Ajout&eacute;e par <?php echo $news['nom'] ?></h4>
                 
                 <p><?php echo $news['text'] ?></p>
-                <a href="">Supprimer</a>
+                <a href="deleteCommentaire.php?id=<?php echo $id ?>"
+                onclick="return confirm('Etes-vous s&ucirc;r de vouloir supprimer ce commentaire ?');">Supprimer</a>
+                
                 
                 <?php
                 }
