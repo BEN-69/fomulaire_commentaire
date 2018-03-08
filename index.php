@@ -16,9 +16,32 @@
 <!--  container-->
 <div class="container">
     
-    <div class="col-md-10 col-xs-10 spacer">     
-        <!-- formulaire  Ajouter une commentaire -->
+    <div class="col-md-10 col-xs-10 spacer"> 
+    	<!-- Partie  traitement  Ajouter une commentaire dans le fichier news.txt  -->     
+    	<?php
+        if (isset($_POST['text']) && isset($_POST['nom'])) {
+            //On definit les variables
+            if (!empty($_POST['nom']) AND !empty($_POST['text'])) {
+                // Si on a quelque chose a enregistrer
+                extract($_POST);
+                $text = $_POST['text'];
+                $nom = $_POST['nom'];
+                //On recupere les donnees deje existantes
+                $news = unserialize(file_get_contents('news.txt'));
+                $news[] = array('nom' => $nom, 'text' => $text);
+                file_put_contents('news.txt', serialize($news));
+            } else {
+               
+                echo " <p class='bg-danger'> Vous n'avez pas remplie tous les champs du formulaire</p> ";
+            }
+        
+        }
+        ?>
+         <!-- Fin traitement  Ajouter une commentaire --> 
     
+    
+        
+        <!-- formulaire  Ajouter une commentaire -->
         <div class="panel panel-default spacer">
            
             <div class="panel-heading">
